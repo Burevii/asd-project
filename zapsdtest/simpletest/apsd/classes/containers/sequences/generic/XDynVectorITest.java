@@ -48,7 +48,7 @@ abstract public class XDynVectorITest extends XDynVectorTest<Long> {
     @Test
     @DisplayName("Check starting from a NonEmpty Vector")
     public void NonEmpty() {
-      AddTest(25);
+      AddTest(28);
       NewNonEmptyContainer();
       TestGetFirst(4L, false);
       TestGetLast(1L, false);
@@ -71,7 +71,10 @@ abstract public class XDynVectorITest extends XDynVectorTest<Long> {
       TestShiftLeft(Natural.ZERO, Natural.ONE);
       TestSize(3L, false);
       TestShiftRight(Natural.ZERO, Natural.Of(2));
-      TestSize(5L, false);
+      TestPrintContent("");
+      TestShiftFirstRight();
+      TestShiftLastRight();
+      TestSize(7L, false);
       TestPrintContent("");
       TestClear();
       TestSize(0L, false);

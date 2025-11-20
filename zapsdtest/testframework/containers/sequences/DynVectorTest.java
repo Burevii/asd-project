@@ -107,11 +107,12 @@ public interface DynVectorTest<Data, Con extends DynVector<Data>> extends Vector
   @Override
   default void TestShiftLastRight() {
     BeginTest("ShiftLastRight");
+    Data dat = ThisContainer().GetLast();
     long initialSize = ThisContainer().Size().ToLong();
     ThisContainer().ShiftLastRight();
     assertEquals(initialSize + 1, ThisContainer().Size().ToLong(),
     "ShiftLastRight should automatically call Expand and Size should increase by 1");
-    assertNull(ThisContainer().GetLast(), "Last position should be null");
+    assertEquals(dat, ThisContainer().GetLast(), "Last position should be preserved");
     EndTest();
   }
 
