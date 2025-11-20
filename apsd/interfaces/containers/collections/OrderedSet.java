@@ -1,6 +1,6 @@
 package apsd.interfaces.containers.collections;
 
-public interface OrderedSet<Data> { // Must extend Set
+public interface OrderedSet<Data> { // Must extend Set; Data must extend Comparable
 
   // Min
 
